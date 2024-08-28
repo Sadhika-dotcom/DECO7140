@@ -7,35 +7,119 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="icon" href="images/Ramen.png" type="image/png" />
-    <link rel="stylesheet" href="css/css_reset.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/css_layout.css">
-    <link rel="stylesheet" href="css/css_components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
     <title>Saddy_Recipes</title>
   </head>
   <body>
-  <header>
+    <header>
       <h1>Saddy's Home</h1>
-    <nav>
-      <a href="Food.html">Main-Courses</a>
-      <a href="Desserts.html">Desserts</a>
-      <a href="Quickies.html">Quick recipes</a>
-    </nav>
-  </header>
+      <nav>
+        <a href="Food.html">Main-Courses</a>
+        <a href="Desserts.html">Desserts</a>
+        <a href="Quickies.html">Quick recipes</a>
+      </nav>
+    </header>
     
     <main id="recipe-gallery">
+       <!-- Recipe Carousel -->
+    <div class="carousel-container">
+    <div class="carousel">
       <!--Recipe cards-->
       <div class="recipe-card">
-      <img src="images/Food.jpeg" alt="Local Ladakhi cuisine with friends" width=300 height=300 class="recipe-image">
-      <h2 class="recipe-title">Recipe Title</h2>
-      <p class="recipe-description">A brief description of the recipe.</p>
-      <a href="RecipeDetail.html" class="recipe-link">View Recipe</a>
+        <img src="images/Food.jpeg" alt="Local Ladakhi cuisine with friends" class="recipe-image">
+        <h2 class="recipe-title">Good food, makes good memories.</h2>
+        <p class="recipe-description">Good food nourishes not just the body but also the soul, creating unforgettable moments and cherished memories around the table.</p>
       </div>
-      <p class="standout-text">This website helps keep track of all the recipes I have made which turned out delishaass!</p>
+      <div class="recipe-card">
+        <img src="images/Momos.jpeg" alt="momos" class="recipe-image">
+        <h2 class="recipe-title">Momos</h2>
+        <p class="recipe-description">Bite-sized dumplings packed with flavor. Perfect to make together with close ones and enjoy!</p>
+        <a href="RecipeDetail.html" class="recipe-link">View Recipe</a>
+      </div>
+      <div class="recipe-card">
+        <img src="images/Uttapam.jpeg" alt="Uttapam" class="recipe-image">
+        <h2 class="recipe-title">Uttapam</h2>
+        <p class="recipe-description">A savory, spongy pancake that turns every meal into a hearty, flavorful delight.</p>
+        <a href="RecipeDetail.html" class="recipe-link">View Recipe</a>
+      </div>
+      <div class="recipe-card">
+        <img src="images/Pokhalo meal.jpeg" alt="Pokhalo meal" class="recipe-image">
+        <h2 class="recipe-title">Pokhalo</h2>
+        <p class="recipe-description">Sit on the cool ground and enjoy this cooling meal with a side of ripe mangoes! Recipe for a perfect summer afternoon</p>
+        <a href="RecipeDetail.html" class="recipe-link">View Recipe</a>
+      </div>
+      <div class="recipe-card">
+        <img src="images/Chamde bhat.jpeg" alt="Chamde bhat" class="recipe-image">
+        <h2 class="recipe-title">Chamde Bhat</h2>
+        <p class="recipe-description">Where did that name come from? *eyesthatfriend* A quick recipe when feeling super lazy</p>
+        <a href="RecipeDetail.html" class="recipe-link">View Recipe</a>
+      </div>
+      <div class="recipe-card">
+        <img src="images/Chonky masala noodles.jpeg" alt="Chonky masala noodles" class="recipe-image">
+        <h2 class="recipe-title">Chonky masala noodles</h2>
+        <p class="recipe-description">A twist to chinese wok noodles with masala tadka</p>
+        <a href="RecipeDetail.html" class="recipe-link">View Recipe</a>
+      </div>
+      <div class="recipe-card">
+        <img src="images/Kadhai paneer.jpeg" alt="Kadhai paneer" class="recipe-image">
+        <h2 class="recipe-title">Kadhai paneer</h2>
+        <p class="recipe-description">One line?<br>CAN'T HAVE ENOUGH.</p>
+        <a href="RecipeDetail.html" class="recipe-link">View Recipe</a>
+      </div>
+      <div class="recipe-card">
+        <img src="images/daal.jpeg" alt="daal" class="recipe-image">
+        <h2 class="recipe-title">Daal</h2>
+        <p class="recipe-description">It is a must have, can't go wrong with it. Rice. roti. sabji. daal. The MEAL.</p>
+        <a href="RecipeDetail.html" class="recipe-link">View Recipe</a>
+      </div>
+      <div class="recipe-card">
+        <img src="images/Kimbap.jpeg" alt="Kimbap" class="recipe-image">
+        <h2 class="recipe-title">Kimbap</h2>
+        <p class="recipe-description">This somehow made it's way from Korea to here</p>
+        <a href="RecipeDetail.html" class="recipe-link">View Recipe</a>
+      </div>
+    </div>
+      <p class="standout-text">Checkout all my recipes which turned out delishaass!<br>Stay tuned for more!</p>
+      
+      <!-- Feedback Form -->
+      <div class="feedback-card">
+        <h2 class="feedback-title">I would love your feedback!</h2>
+        <form class="feedback-form" action="#" method="post">
+          <label for="first-name">First Name:</label>
+          <input type="text" id="first-name" name="first-name" required>   
+          <label for="feedback">Feedback:</label>
+          <textarea id="feedback" name="feedback" required></textarea>
+          <button type="submit" class="submit-button">Submit</button>
+        </form>
       </div>
     </main>
+    
     <footer>
       <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript for Carousel -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const carousel = document.querySelector('.carousel');
+        let index = 0;
+        const cards = document.querySelectorAll('.recipe-card');
+        const totalCards = cards.length;
+
+        function showCard(index) {
+          const cardWidth = cards[0].offsetWidth;
+          carousel.style.transform = `translateX(-${index * cardWidth}px)`;
+        }
+
+        // Automatically rotate cards
+        setInterval(() => {
+          index = (index < totalCards - 1) ? index + 1 : 0;
+          showCard(index);
+        }, 3000); // Change the number for a different interval (3000ms = 3s)
+      });
+  </script>
   </body>
 </html>
+

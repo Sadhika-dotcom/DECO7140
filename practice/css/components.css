@@ -1,0 +1,100 @@
+/* Component Styles */
+.recipe-title {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.recipe-description {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+.recipe-link {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.recipe-link:hover {
+    background-color: #0056b3;
+}
+
+.standout-text {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #6F4F28;
+    background-color: #fff3e0;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.feedback-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #f8f8f8; /* Same as header */
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: #6F4F28;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-form label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.feedback-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: center;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
