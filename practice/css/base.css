@@ -3,13 +3,114 @@
 
 */
 
-body {
-    font-family: 'Gaegu', cursive;
-    font-size: 100%;
+
+/* Apply Roboto font to body text and other elements */
+body, p, a {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6; /* Adjust line height for readability */
+    margin: 0;
+    padding: 0;
 }
 
-h4 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    
+/* Apply Playfair Display font to headings */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 10px; /* Margin below headings for spacing */
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #f8f8f8; /* Light background for header */
+    padding: 20px; /* Padding around header content */
+    text-align: center; /* Center-align header text */
+}
+
+header h1 {
+    font-size: 2.5rem; /* Larger font size for main heading */
+    margin-bottom: 10px; /* Margin below the main heading */
+}
+
+header nav {
+    margin-top: 10px; /* Margin above navigation */
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333; /* Dark color for links */
+    margin: 0 30px; /* Horizontal margin between links */
+    font-weight: 500; /* Medium weight for links */
+}
+
+header nav a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Main content styling */
+main {
+    padding: 20px; /* Padding around main content */
+    max-width: 1200px; /* Limit maximum width for better readability */
+    margin: 0 auto; /* Center-align main content */
+}
+
+.recipe-card {
+    border: 1px solid #ddd; /* Light border around recipe cards */
+    border-radius: 8px; /* Rounded corners for recipe cards */
+    padding: 15px; /* Padding inside recipe cards */
+    margin-bottom: 20px; /* Margin below each recipe card */
+    text-align: center; /* Center-align text within recipe cards */
+}
+
+.recipe-image {
+    border-radius: 8px; /* Rounded corners for images */
+    width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Margin below images */
+}
+
+.recipe-title {
+    font-size: 1.5rem; /* Font size for recipe titles */
+    margin: 10px 0; /* Margin above and below titles */
+}
+
+.recipe-description {
+    font-size: 1rem; /* Font size for recipe descriptions */
+    color: #666; /* Slightly lighter color for descriptions */
+    margin: 10px 0; /* Margin above and below descriptions */
+}
+
+.recipe-link {
+    display: inline-block; /* Inline-block to control padding */
+    padding: 10px 20px; /* Padding inside the link */
+    text-decoration: none; /* Remove underline from links */
+    background-color: #007bff; /* Background color for buttons */
+    color: #fff; /* Text color for buttons */
+    border-radius: 5px; /* Rounded corners for buttons */
+    font-weight: 700; /* Bold text for buttons */
+    margin-top: 10px; /* Margin above the button */
+}
+
+.recipe-link:hover {
+    background-color: #0056b3; /* Darker background on hover */
+}
+
+.standout-text {
+    text-align: center; /* Center-align the text */
+    font-size: 1rem; /* Increase font size */
+    font-weight: 600; /* Semi-bold text */
+    color: #6F4F28; /* Color to make the text pop */
+    background-color: #fff3e0; /* Light background color for contrast */
+    border-radius: 5px; /* Rounded corners for background */
+    padding: 15px; /* Padding around the text */
+    margin: 20px auto; /* Margin for spacing and centering */
+    max-width: 600px; /* Limit the width for better readability */
+}
+
+/* Footer styling */
+footer {
+    background-color: #f8f8f8; /* Light background for footer */
+    text-align: center; /* Center-align footer text */
+    padding: 10px; /* Padding around footer content */
+    font-size: 0.875rem; /* Slightly smaller font size */
+    color: #666; /* Lighter text color */
 }
