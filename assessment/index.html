@@ -1,19 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Title</title>
-  </head>
-  <body>
-    <header>
-      <h1>Sadhika's assessment project page</h1>
-    </header>
-    <main>
-      <p><a href="../index.html">Home</a></p>
-    </main>
-    <footer>
-      <p>&copy; 2024 Your Name. All rights reserved.</p>
-    </footer>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rogue Arcade</title>
+    <link rel="stylesheet" href="style.css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#discovery">Discovery</a></li>
+            <li><a href="#community">Community</a></li>
+        </ul>
+        <div class="logo">
+            <img src="logo.png" alt="Rogue Arcade Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#insights">Insights</a></li>
+            <li><a href="#profile">Profile</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+          <h1>Welcome to Rogue Arcade</h1>
+          <p>Explore the best indie and retro games handpicked by the community</p>
+          <button class="cta-btn">Login</button>
+      </div>
+  </section>
+
+    <!-- Recommended Games Carousel -->
+    <section class="recommended-games">
+        <h2>Most Recommended Games</h2>
+        <div class="carousel">
+            <div class="carousel-item">
+                <h3>Game Title 1</h3>
+                <p>A short description of the game.</p>
+                <button class="like-btn">Like</button>
+                <button class="bookmark-btn">Bookmark</button>
+            </div>
+            <div class="carousel-item">
+                <h3>Game Title 2</h3>
+                <p>A short description of the game.</p>
+                <button class="like-btn">Like</button>
+                <button class="bookmark-btn">Bookmark</button>
+            </div>
+            <!-- Add more carousel items as needed -->
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
 </html>
