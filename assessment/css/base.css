@@ -1,0 +1,115 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #e6f4ea;
+    color: #2b6e4f;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #355e3b;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-links a:hover {
+    color: #9ce698;
+  }
+  
+  .logo img {
+    width: 120px;
+  }
+  
+  /* Hero Section */
+  
+  
+  .hero {
+    background-image: url('images/hero banner 2.webp');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 20px;
+    color: #fff;
+  }
+  .hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+  }
+  
+  .cta-btn {
+    background-color: #6dbc77;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .cta-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Recommended Games Section */
+  .recommended-games {
+    padding: 40px;
+    background-color: #f0f8f5;
+    text-align: center;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+  }
+  
+  .carousel-item {
+    background-color: #d6eae1;
+    padding: 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    min-width: 200px;
+    flex: 0 0 auto;
+  }
+  
+  .carousel-item h3 {
+    color: #2b6e4f;
+  }
+  
+  .like-btn, .bookmark-btn {
+    background-color: #6dbc77;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .like-btn:hover, .bookmark-btn:hover {
+    background-color: #4f8b5f;
+  }
+  
