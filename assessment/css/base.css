@@ -41,8 +41,8 @@ body {
   /* Hero Section */
   
   
-  .hero {
-    background-image: url('images/hero banner 2.webp');
+  .hero{
+    background-image: url("/assessment/images/herobanner.jpg");
     background-size: cover;
     background-position: center;
     text-align: center;
