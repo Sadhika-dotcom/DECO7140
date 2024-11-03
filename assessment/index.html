@@ -3,6 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Link to the manifest file -->
+        <link rel="manifest" href="/manifest.json">
+        <meta name="theme-color" content="#ABD451">
+
+        <!-- Apple-specific settings (only needed for Apple devices) -->
+        <link rel="apple-touch-icon" sizes="192x192" href="/assessment/icons/icon-192x192.png">
+
+        <!-- Service worker registration -->
+        <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/serviceWorker.js')
+                .then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch((error) => {
+                console.log('Service Worker registration failed:', error);
+                });
+            });
+        }
+        </script>
+
         <title>Rogue Arcade</title>
         
         
@@ -18,13 +40,12 @@
         <script type="module" src="javascript/script.js" defer></script>
     </head>
     <body>
+        
         <section class="hero">
             <div class="main-width">
                 <header>
                     <div class="logo">
-                        <img src="images/logo.png" alt="Rogue Arcade Logo"/>
-                        
-                        
+                        <img src="images/logo.png" alt="Rogue Arcade Logo"/>   
                     </div>
 
                     <nav>
@@ -89,6 +110,7 @@
                 </div>
             </div>
         </section>
+     
         
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
