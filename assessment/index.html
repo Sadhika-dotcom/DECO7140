@@ -4,17 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rogue Arcade</title>
+        
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/base.css">
         <link rel="stylesheet" href="css/layout.css">
         <link rel="stylesheet" href="css/components.css">
         <link rel="stylesheet" href="css/css_reset.css">
         <script type="module" src="javascript/script.js" defer></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     </head>
     <body>
         <section class="hero">
@@ -22,22 +23,140 @@
                 <header>
                     <div class="logo">
                         <img src="images/logo.png" alt="Rogue Arcade Logo"/>
-                        <h2><a href="#">Rogue Arcade</a></h2>
+                        
                         
                     </div>
 
                     <nav>
                         <ul>
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#">Discovery</a></li>
-                            <li><a href="#">Community</a></li>
-                            <li><a href="#">Insights</a></li>
-                            <li class="btn"><a href="#">Profile</a></li>
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="discovery.html">Discovery</a></li>
+                            <li><a href="community.html">Community</a></li>
+                            <li><a href="insights.html">Insights</a></li>
+                            <li><a href="profile.html">Profile</a></li>
                         </ul>
                     </nav>
+                </header>
+
+                <div class="content-carousel-container">
+                    <div class="content">
+                        <div class="main-text">
+                            <h6>#1 Recommended by Community</h6>
+                            <h3>Top spot in Indie game collection</h3>
+                            <h1>HOLLOW KNIGHTS</h1>
+                            <P>
+                                Hollow Knight is a captivating indie game by Team Cherry, set in the mysterious, beautifully crafted world of Hallownest.<br>
+                                Explore this dark, atmospheric kingdom as a silent knight, facing challenging enemies and uncovering rich lore.<br>
+                                
+                            </P>
+                            <a href="#" class="cta"><i class="fa-solid fa-play"></i>Watch Trailer</a>
+                        </div>
+
+                        
+
+                        <div class="social">
+                            <a href="#"><i class="fa-brands fa-windows"></i></a>
+                            <a href="#"><i class="fa-brands fa-apple"></i></a>
+                            <a href="#"><i class="fa-brands fa-android"></i></a>
+                            <a href="#"><i class="fa-brands fa-playstation"></i></a>
+                            <a href="#"><i class="fa-brands fa-xbox"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-box">
+                        <div class="carousel">
+                            <div class="carousel-item" data-game="hollowknight">
+                                <img src="images/hollowknight.jpg" alt="Hollow Knight">
+                            </div>
+                            <div class="carousel-item" data-game="cuphead">
+                                <img src="images/Cuphead.png" alt="Cuphead">
+                            </div>
+                            <div class="carousel-item" data-game="stardewvalley">
+                                <img src="images/stardewvalley.jpg" alt="Stardew Valley">
+                            </div>
+                            <div class="carousel-item" data-game="hades">
+                                <img src="images/hades.jpg" alt="Hades">
+                            </div>
+                            <div class="carousel-item" data-game="limbo">
+                                <img src="images/Limbo.jpg" alt="Limbo">
+                            </div>
+                            <div class="carousel-item" data-game="ufo50">
+                                <img src="images/ufo50.png" alt="UFO 50">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </section>
+        
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.carousel').carousel();
+            });
 
         
+            document.addEventListener('DOMContentLoaded', function() {
+                const gameData = {
+                    hollowknight: {
+                        title: "HOLLOW KNIGHT",
+                        subtitle: "Top spot in Indie game collection",
+                        description: "Hollow Knight is a captivating indie game by Team Cherry, set in the mysterious, beautifully crafted world of Hallownest. Explore this dark, atmospheric kingdom as a silent knight, facing challenging enemies and uncovering rich lore.",
+                        cta: "Watch Trailer"
+                    },
+                    cuphead: {
+                        title: "CUPHEAD",
+                        subtitle: "Classic Cartoon Aesthetics Meet Intense Action",
+                        description: "Cuphead is a run-and-gun indie game developed by Studio MDHR, featuring stunning hand-drawn animation inspired by 1930s cartoons. Play as Cuphead or Mugman, embarking on a thrilling adventure through whimsical worlds, facing off against formidable bosses. Master challenging gameplay mechanics and enjoy a jazzy soundtrack in this critically acclaimed experience.",
+                        cta: "Watch Trailer"
+                    },
+                    stardewvalley: {
+                        title: "STARDEW VALLEY",
+                        subtitle: "Build Your Dream Farm and Community",
+                        description: "Stardew Valley is a charming farming simulation game developed by ConcernedApe, where you inherit a rundown farm. Grow crops, raise animals, mine for resources, and build relationships with the townsfolk in this delightful pixel art world. With endless possibilities and a relaxing atmosphere, it's the perfect escape into rural life.",
+                        cta: "Watch Trailer"
+                    },
+                    hades: {
+                        title: "HADES",
+                        subtitle: "Battle Out of Hell",
+                        description: "Hades is a rogue-like dungeon crawler developed by Supergiant Games. As the immortal Prince of the Underworld, you'll wield the powers and mythic weapons of Olympus to break free from the clutches of the god of the dead himself, while growing stronger and unraveling more of the story with each unique escape attempt.",
+                        cta: "Watch Trailer"
+                    },
+                    limbo: {
+                        title: "LIMBO",
+                        subtitle: "A Journey Through a Dark World",
+                        description: "Limbo is a puzzle-platformer developed by Playdead. The game is presented in black-and-white tones, creating a haunting and eerie atmosphere. Players guide a boy through dangerous environments and traps as he searches for his sister.",
+                        cta: "Watch Trailer"
+                    },
+                    ufo50: {
+                        title: "UFO 50",
+                        subtitle: "50 Games in One",
+                        description: "UFO 50 is a collection of 50 retro-inspired games developed by Mossmouth and friends. Each game is designed to be a complete experience, with its own unique mechanics and challenges, reminiscent of the 8-bit and 16-bit eras.",
+                        cta: "Watch Trailer"
+                    }
+                };
+
+                const carouselItems = document.querySelectorAll('.carousel-item');
+                const mainText = document.querySelector('.main-text');
+                const mainTitle = mainText.querySelector('h1');
+                const mainSubtitle = mainText.querySelector('h3');
+                const mainDescription = mainText.querySelector('p');
+                const mainCta = mainText.querySelector('.cta');
+
+                carouselItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        const gameKey = item.getAttribute('data-game');
+                        const game = gameData[gameKey];
+
+                        mainTitle.textContent = game.title;
+                        mainSubtitle.textContent = game.subtitle;
+                        mainDescription.innerHTML = game.description.replace(/\n/g, '<br>');
+                        mainCta.innerHTML = `<i class="fa-solid fa-play"></i>${game.cta}`;
+                    });
+                });
+            });
+        </script>
     </body>
-    </html>
+</html>
