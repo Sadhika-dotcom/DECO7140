@@ -249,96 +249,139 @@ nav {
 }
 
 
-/* Mobile (iPhone SE) */
-@media screen and (max-width: 600px) {
-  /* Ensure the logo is at the top and centered */
-  .hero header {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-  }
 
-  .hero .logo img {
-    height: 80px; /* Increase the height for a bigger logo */
-    margin-bottom: 20px; /* Add some space below the logo */
-    align-items: center;
-  }
 
+
+
+.cols__container {
+  display: flex;
+  gap: 20px;
+}
+
+/* Left Column - Profile Section */
+.left__col {
+  width: 30%;
+  background-color: var(--primary-color);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-left: 17%;
+}
+
+.left__col .img__container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--secondary-color);
+}
+
+.left__col .img__container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.left__col h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+.left__col p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  color: #bae6ff;
+}
+
+.stats li {
+  list-style: none;
+  text-align: center;
+}
+
+.stats li span {
+  display: block;
+  font-weight: 700;
+  font-size: 18px;
+  color: #98cdff;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social li {
+  list-style: none;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.social li i {
+  color: #98cdff;
+  transition: color 0.3s;
+}
+
+.social li i:hover {
+  color: var(--text-color);
+}
+
+/* Right Column - Navigation and Bookmarks */
+.right__col {
+  width: 70%;
+}
+
+
+
+/* Bookmarks Section */
+
+
+.bookmarks h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #98cdff;
+}
+
+
+/* Container for the grid */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(5, 1fr); /* 3 equal rows */
+  gap: 20px; /* Optional: space between grid items */
+  margin-top: 30px; /* Space above the grid */
   
-
-  /* Carousel at the top, beneath the logo */
-  .content-carousel-container {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
-
-  .carousel-box {
-    order: 1;
-    width: 100%;
-    max-width: none;
-    margin-bottom: 20px; /* Add some space below the carousel */
-  }
-
-  .content {
-    order: 2;
-    padding: 20px;
-    text-align: center;
-    width: 90%; /* Ensure content fits within the screen */
-    margin: 0 auto; /* Center the content */
-  }
 }
 
-
-
-/* Tablet (iPad) */
-@media screen and (min-width: 601px) and (max-width: 1000px) {
-  /* Adjustments for tablet view */
-  .hero header {
-    padding: 30px 0;
-  }
-
-  .hero nav ul li a {
-    margin-right: 60px;
-  }
-
-  .content-carousel-container {
-    flex-direction: column;
-  }
-
-  .carousel-box {
-    width: 100%;
-    max-width: 800px;
-  }
-
-  .content {
-    padding: 20px;
-    text-align: center;
-  }
+/* Individual game item */
+.game-item {
+  position: relative;
+  width: 100%; /* Fill grid cell width */
+  padding-top: 100%; /* Makes each item square */
+  overflow: hidden;
+  border-radius: 8px; /* Optional for rounded corners */
 }
 
-/* Laptop (1000px and above) */
-@media screen and (min-width: 1001px) {
-  /* Adjustments for laptop view */
-  .hero header {
-    padding: 40px 0 30px;
-  }
-
-  .hero nav ul li a {
-    margin-right: 120px;
-  }
-
-  .content-carousel-container {
-    flex-direction: row;
-  }
-
-  .carousel-box {
-    width: 60%;
-    max-width: 700px;
-  }
-
-  .content {
-    padding-top: 60px;
-  }
+/* Image styling */
+.game-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover entire square without distortion */
+  border-radius: 8px; /* Optional: matches container */
 }
 

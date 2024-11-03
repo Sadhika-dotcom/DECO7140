@@ -1,48 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/profile.css"> <!-- Add profile specific CSS -->
-    <title>User Profile</title>
-</head>
-<body>
-    <section class="profile-section">
-        <div class="profile-header">
-            <h2>User Profile</h2>
-            <div class="profile-picture">
-                <img src="images/default-profile.png" alt="Profile Picture" id="avatar">
-                <input type="file" accept="image/*" id="upload-photo">
-            </div>
-            <input type="text" id="username" placeholder="Enter your username" required>
-            <textarea id="bio" placeholder="Tell us about yourself..." maxlength="150"></textarea>
-        </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Profile Page</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/layout.css">
+        <link rel="stylesheet" href="css/components.css">
+        <link rel="stylesheet" href="css/css_reset.css">
+        <script type="module" src="javascript/script.js" defer></script>
+  </head>
+    <body>
+        <section class="hero">
+            <div class="main-width">
+                <header>
+                    <div class="logo">
+                        <img src="images/logo.png" alt="Rogue Arcade Logo"/>   
+                    </div>
 
-        <div class="bookmarked-games">
-            <h3>Bookmarked Games</h3>
-            <div class="bookmarked-card">
-                <ul class="bookmarked-list">
-                    <li>
-                        <input type="checkbox" id="game1">
-                        <label for="game1">Game Title 1</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="game2">
-                        <label for="game2">Game Title 2</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="game3">
-                        <label for="game3">Game Title 3</label>
-                    </li>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="discovery.html">Discovery</a></li>
+                            <li><a href="community.html">Community</a></li>
+                            <li><a href="insights.html">Insights</a></li>
+                            <li class="active"><a href="profile.html">Profile</a></li>
+                        </ul>
+                    </nav>
+                </header>
+        
+        <div class="cols__container">
+            <div class="left__col">
+            <div class="img__container">
+                <img src="images/profilepic.jpg" alt="Gamer Profile" />
+                <span></span>
+            </div>
+            <h2>Player Name</h2>
+            <p>Pro Gamer & Content Creator</p>
+            <p>player@example.com</p>
+
+            <ul class="stats">
+                <li><span>5,467</span> Followers</li>
+                <li><span>682</span> Following</li>
+                <li><span>50</span> Games Played</li>
+            </ul>
+
+            <div class="content">
+                <p>
+                Passionate gamer and content creator. I enjoy exploring new worlds,
+                achieving high scores, and sharing my gaming journey with my fans.
+                </p>
+
+                <ul class="social">
+                <li><i class="fab fa-twitter"></i></li>
+                <li><i class="fab fa-twitch"></i></li>
+                <li><i class="fab fa-youtube"></i></li>
+                <li><i class="fab fa-discord"></i></li>
                 </ul>
             </div>
+            </div>
+
+            <div class="right__col">
+            <div class="bookmarks">
+                <h3>Bookmark</h3>
+                <div class="right__col">
+                    <!-- New Games Grid for Bookmarked Games -->
+                    <div class="games-grid">
+                        <!-- Add 25 items for a 5x5 grid, each with an image -->
+                        <div class="game-item"><img src="images/game1.jpg" alt="Game 1"></div>
+                        <div class="game-item"><img src="images/game2.png" alt="Game 2"></div>
+                        <div class="game-item"><img src="images/game3.jpg" alt="Game 3"></div>
+                        <div class="game-item"><img src="images/game4.png" alt="Game 4"></div>
+                        <div class="game-item"><img src="images/game5.jpg" alt="Game 5"></div>
+                        <div class="game-item"><img src="images/game6.jpg" alt="Game 6"></div>
+                        <div class="game-item"><img src="images/hollowknight.jpg" alt="Game 7"></div>
+                        <div class="game-item"><img src="images/game8.jpg" alt="Game 8"></div>
+                        <div class="game-item"><img src="images/game9.png" alt="Game 9"></div>
+                        <div class="game-item"><img src="images/game10.jpg" alt="Game 10"></div>
+                        <div class="game-item"><img src="images/Limbo.jpg" alt="Game 11"></div>
+                        <div class="game-item"><img src="images/stardewvalley.jpg" alt="Game 12"></div>
+                        <div class="game-item"><img src="images/ufo50.png" alt="Game 13"></div>
+                        <div class="game-item"><img src="images/hades.jpg" alt="Game 14"></div>
+                        <div class="game-item"><img src="images/game15.jpg" alt="Game 15"></div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            
+            </div>
         </div>
-    </section>
-</body>
+        </div>
+    </body>
 </html>

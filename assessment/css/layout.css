@@ -1,66 +1,94 @@
-/* Flex Navbar */
-#flexnavbar {
-    display: flex; /* turn this element into a flex container */
-    flex-flow: row wrap; /* content flows left to right and wraps if needed */
-    justify-content: space-around; /* extra space is added around each element */
-}
-
-#flexnavbar > a {
-    flex: 1; /* each element tries to take up an equal amount of space */
-    padding: 3px 10px; /* add some padding to space things out */
-}
-
-/* Grid Container */
-#gridcontainer {
-    display: grid; /* turn this element into a grid container */
-    height: 100vh; /* make the grid container take up 100% of the window height */
-    grid-template-areas:
-        "header header header"
-        "nav nav nav"
-        "main main main"
-        "foot foot foot";
-    grid-template-columns: 1fr 1fr 1fr; /* set the column widths */
-    grid-template-rows: auto auto 1fr auto; /* set the row heights */
-}
-
-/* Grid Area Assignments */
-header {
-    grid-area: header; /* attach this element to the grid area named header */
-}
-
-#flexnavbar {
-    grid-area: nav; /* attach this element to the grid area named nav */
-}
-
-main {
-    grid-area: main; /* attach this element to the grid area named main */
-}
-
-footer {
-    grid-area: foot; /* attach this element to the grid area named foot */
-}
-
-/* Media Query for devices larger than 600px wide */
-@media screen and (min-width: 600px) {
-    #flexnavbar {
-        justify-content: flex-end; /* justify all items to the end */
+/* Mobile (iPhone SE) */
+@media screen and (max-width: 600px) {
+    /* Ensure the logo is at the top and centered */
+    .hero header {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
     }
-
-    #flexnavbar > a {
-        flex: none; /* elements will not shrink or grow */
-        padding: 3px 10px; /* maintain consistent padding */
+  
+    .hero .logo img {
+      height: 80px; /* Increase the height for a bigger logo */
+      margin-bottom: 20px; /* Add some space below the logo */
+      align-items: center;
     }
-
-    #gridcontainer {
-        /* redefine the grid structure for larger screens */
-        grid-template-areas:
-            "header header header"
-            "nav nav nav"
-            "main main main"
-            "foot foot foot";
-        grid-template-columns: 1fr 1fr 1fr; /* set the column widths */
-        grid-template-rows: auto auto 1fr auto; /* set the row heights */
+  
+    
+  
+    /* Carousel at the top, beneath the logo */
+    .content-carousel-container {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
     }
-}
-
+  
+    .carousel-box {
+      order: 1;
+      width: 100%;
+      max-width: none;
+      margin-bottom: 20px; /* Add some space below the carousel */
+    }
+  
+    .content {
+      order: 2;
+      padding: 20px;
+      text-align: center;
+      width: 90%; /* Ensure content fits within the screen */
+      margin: 0 auto; /* Center the content */
+    }
+  }
+  
+  
+  
+  /* Tablet (iPad) */
+  @media screen and (min-width: 601px) and (max-width: 1000px) {
+    /* Adjustments for tablet view */
+    .hero header {
+      padding: 30px 0;
+    }
+  
+    .hero nav ul li a {
+      margin-right: 60px;
+    }
+  
+    .content-carousel-container {
+      flex-direction: column;
+    }
+  
+    .carousel-box {
+      width: 100%;
+      max-width: 800px;
+    }
+  
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+  }
+  
+  /* Laptop (1000px and above) */
+  @media screen and (min-width: 1001px) {
+    /* Adjustments for laptop view */
+    .hero header {
+      padding: 40px 0 30px;
+    }
+  
+    .hero nav ul li a {
+      margin-right: 120px;
+    }
+  
+    .content-carousel-container {
+      flex-direction: row;
+    }
+  
+    .carousel-box {
+      width: 60%;
+      max-width: 700px;
+    }
+  
+    .content {
+      padding-top: 60px;
+    }
+  }
+  
   
