@@ -1,4 +1,4 @@
-import { load } from "./general_modules.js";
+import { load } from "./components.js";
 
 
 

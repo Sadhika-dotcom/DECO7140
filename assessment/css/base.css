@@ -1,13 +1,176 @@
-/* General Styling */
+:root {
+  /* Color Scheme */
+  --primary-color: #1a1a40;      /* Dark bluish-purple */
+  --secondary-color: #111133;    /* Dark navy */
+  --background-color: #000020;   /* Almost black */
+  --text-color: #ffffff;         /* White for text */
+
+  /* Other Variables */
+  --font-family: "Poppins", serif;
+  --max-width: 1400px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
 body {
+  overflow-x: hidden;
+}
+
+.main-width {
+  width: var(--max-width);
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+/* Hero Section Styling */
+.hero {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, var(--primary-color) 10%, var(--secondary-color) 40%, var(--background-color) 90%);
+  position: relative;
+}
+
+/* Header and Logo Styling */
+.hero header .logo h2 a {
+  display: block;
+  font-size: 32px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-color);
+}
+.hero header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0 30px;
+}
+nav ul li{
+  list-style: none;
+  display: inline-block;
+}
+nav ul li a{
+  text-decoration: none;
+  color: var(--text-color);
+  margin-left: 60px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: .4s;
+}
+
+nav ul li:not(:last-child) a:hover,
+nav ul li:not(:last-child) a:focus{
+  border-bottom: 2px solid white;
+}
+
+nav ul li.active a{
+  border-bottom: 2px solid white;
+}
+
+nav ul li.btn a{
+  background: transparent;
+  color: white;
+  border: 1px solid #98cdff;
+  padding: 9px 20px;
+  border-radius: 30px;
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 150px;
+}
+nav ul li.btn:hover a{
+  border: 1px solid white;
+  color: black;
+  background: white;
+  transition: .4s;
+}
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 32px; /* Matches the font size of 32px for the text */
+  margin-right: 10px; /* Adds some spacing between the image and text */
+}
+
+.logo h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.logo h2 a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+
+
+
+
+
+
+/*General Styling
+/* body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: #e6f4ea;
     color: #1d1d1d;
   }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #273b40;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    flex: 1;
+    justify-content: space-around; 
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-icon {
+    width: 30px; 
+    height: auto;
+}
+
+.nav-links a:hover .nav-icon {
+    transform: scale(1.1); 
+}
+
+.logo img {
+    width: 60px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+
+
+
   
   /* Navbar */
-  .navbar {
+  /* .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,11 +199,11 @@ body {
   
   .logo img {
     width: 60px;
-  }
+  } */
   
-  /* Hero Section */
+  /* Hero Section
   
-  .hero {
+.hero {
     position: relative;
     background-image: url("/assessment/images/hero.jpeg");
     background-size: cover;
@@ -57,7 +220,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    background: rgba(0, 0, 0, 0.5); Semi-transparent black overlay
     z-index: 1;
 }
 
@@ -95,7 +258,7 @@ body {
 
 .cta-btn:hover {
     transform: scale(1.1);
-}
+} */
 
   /* .hero{
     background-image: url("/assessment/images/hero.jpeg");
@@ -134,7 +297,7 @@ body {
   } */
   
   /* Recommended Games Section */
-  .recommended-games {
+  /* .recommended-games {
     padding: 40px;
     background-color: #1d1d1d;
     text-align: center;
@@ -172,3 +335,39 @@ body {
     background-color: #3c4748;
   }
   
+
+.profile-section {
+    padding: 40px;
+    background-color: #e6f4ea;
+}
+
+.profile-header {
+    text-align: center;
+}
+
+.profile-picture img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+#upload-photo {
+    margin-top: 10px;
+}
+
+.bookmarked-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bookmarked-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bookmarked-list input[type="checkbox"] {
+    margin-right: 10px;
+} */
+

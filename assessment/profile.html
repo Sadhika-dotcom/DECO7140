@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/profile.css"> <!-- Add profile specific CSS -->
+    <title>User Profile</title>
+</head>
+<body>
+    <section class="profile-section">
+        <div class="profile-header">
+            <h2>User Profile</h2>
+            <div class="profile-picture">
+                <img src="images/default-profile.png" alt="Profile Picture" id="avatar">
+                <input type="file" accept="image/*" id="upload-photo">
+            </div>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <textarea id="bio" placeholder="Tell us about yourself..." maxlength="150"></textarea>
+        </div>
+
+        <div class="bookmarked-games">
+            <h3>Bookmarked Games</h3>
+            <div class="bookmarked-card">
+                <ul class="bookmarked-list">
+                    <li>
+                        <input type="checkbox" id="game1">
+                        <label for="game1">Game Title 1</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="game2">
+                        <label for="game2">Game Title 2</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="game3">
+                        <label for="game3">Game Title 3</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
