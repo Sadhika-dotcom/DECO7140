@@ -29,12 +29,21 @@ document.getElementById('chatPostForm').addEventListener('submit', function(even
 
     // Send the POST request
     fetch("https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericchat", requestOptions)
-        .then(response => response.json()) // Convert response to JSON
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json(); // Convert response to JSON
+        })
         .then(result => {
             console.log(result); // Log the result to the console
             handleSuccess(result); // Call the success handler with the result
+            fetchChatPosts(); // Refresh the chat list after a successful post
         })
-        .catch(error => handleError(error)); // handle any errors that occur
+        .catch(error => {
+            console.error("Error:", error); // handle any errors that occur
+            handleError(error);
+        });
 });
 
 // Form Submit Success handler
@@ -54,8 +63,11 @@ function handleError(error) {
     messageDiv.style.color = "red";
 }
 
-
-function fetchEvents(studentNumber, zoneld, displayEvents, handleGETError) {
+// Set up the headers for student authentication
+function fetchChatPosts(){
+    const myHeaders = new Headers();
+    myHeaders.append("student_number", "s4872328"); // Replace with actual student number
+    myHeaders.append("uqcloud_zone_id", "918f203d"); // Replace with actual zone ID
 
     // Request options for the GET request
     const requestOptions = {
@@ -64,57 +76,41 @@ function fetchEvents(studentNumber, zoneld, displayEvents, handleGETError) {
         redirect: "follow"
     };
 
-    // Fetch data from the Generic Event API
-    fetch("https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/", requestOptions)
-        .then(response => response.json()) // Parse the JSON response
-            .then(data => {
-            console.log(data); // Log the data to the console for debugging
-
-        let output = ""; // Initialize a variable to store HTML
-
-        // Loop through each event in the response data
-        data.forEach(event => {
-            // Use the returned event information to build a webpage element
-            output += `
-                <div class="event-card">
-                    <h3>${event.event_name}</h3>
-                    <p>Date: ${event.date_time}</p>
-                    <p>Description: ${event.description}</p>
-                    <p>Location: ${event.location}</p>
-                </div>
-            `;
-        });
-
-        // Display the dynamically created HTML in the specified section of the webpage
-        document.getElementById('event-list').innerHTML = output; // Ensure you have an element with ID 'event-list'
-    })
-    .catch(error => console.error('Error:', error)); // Handle any errors that occur
-
-
-
-
-// Function to fetch events from the API
-function fetchEvents(studentNumber, zoneld, displayEvents, handleGETError) {
-    // Request options for the GET request
-    const requestOptions = {
-        method: "GET",
-        headers: myHeaders, // Use the predefined headers
-        redirect: "follow"
-    };
-
-    // Fetch data from the Generic Event API
-    fetch("https://api.igdb.com/v4/events", requestOptions)
+    // Fetch data from the Generic Chat API
+    fetch("https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericchat", requestOptions)
         .then(response => {
+            // Check if the response is OK and in JSON format
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            return response.json(); // Parse the JSON response
+            return response.json(); // Attempt to parse JSON
         })
         .then(data => {
-            displayEvents(data); // Call the success handler
+            console.log(data);
+
+            // Example: Dynamically display the product data on a webpage
+            let output = ""; 
+
+            data.forEach(chatPost => {
+                output += `
+                    <div class="chat-post">
+                        <h3>${chatPost.person_name}</h3>
+                        <h4>${chatPost.chat_post_title}</h4>
+                        <p>${chatPost.chat_post_content}</p>
+                        <span>${chatPost.chat_date_time}</span>
+                    </div>
+                `;
+            });
+
+            document.getElementById("chat-list").innerHTML = output;
         })
         .catch(error => {
-            handleGETError(error); // Call the error handler
+            console.error("Error:", error); 
+            // Display a user-friendly message or handle the error as needed
         });
-}}
+}
+
+document.addEventListener('DOMContentLoaded', fetchChatPosts);
+
+
 

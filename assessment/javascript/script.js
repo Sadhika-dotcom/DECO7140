@@ -7,3 +7,4 @@ logPageLoadMessage();
 // Startup code that runs at or during page load
 alert("JavaScript works!");
 console.log("script loaded");
+
