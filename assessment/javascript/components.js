@@ -1,45 +1,59 @@
-function logPageLoadMessage() {
-    console.log("Javascript is being loaded!");
-}
+export function logPageLoadMessage() {
+    console.log("JavaScript is being loaded!");
+} 
 
+// Ensure this function runs after the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', logPageLoadMessage);
 
+document.getElementById('chatPostForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission behaviour
 
-// Constants
-const studentNumber = "s4872328" ;
-const uqcloudZoneId = "918f203d";
+    // Create headers for authentication
+    const myHeaders = new Headers();
+    myHeaders.append("student_number", "s4872328");
+    myHeaders.append("uqcloud_zone_id", "918f203d");
 
+    // Get the form element
+    const form = document.getElementById('chatPostForm');
 
-// Create headers once as a constant
-const myHeaders = new Headers();
-myHeaders.append ("student_number", "s4872328"); 
-myHeaders.append ("uqcloud_zone_id", "918f203d");
+    // Create FormData from the form
+    const formData = new FormData(form);
 
-// Fetch request function for creating a new event
-function submitEventForm(formData, myHeaders, handleSuccess, handleError) {
-    fetch('https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericevent/', {
-        method: 'POST',
+    // Prepare the fetch request options
+    const requestOptions = {
+        method: "POST",
         headers: myHeaders,
-        body: formData,
+        body: formData, // Pass the serialized form data
         redirect: "follow"
-    })
-    .then(response => {
-        if (!response.ok) {
-            return response.json().then(err => {
-                console.error('Server error response:', err); // Log server error for debugging
-                throw new Error(err.detail || 'Something went wrong'); // Throw an error if not okay
-            });
-        }
-        return response.json(); // If success, return the response as JSON
-    })
-    .then(result => {
-        console.log('Event created:', result);
-        handleSuccess(result); // Call the success handler
-    })
-    .catch(error => {
-        console.error('Error:', error.message); // Log detailed error
-        handleError(error); // Call the error handler
-    });
+    };
+
+    // Send the POST request
+    fetch("https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericchat", requestOptions)
+        .then(response => response.json()) // Convert response to JSON
+        .then(result => {
+            console.log(result); // Log the result to the console
+            handleSuccess(result); // Call the success handler with the result
+        })
+        .catch(error => handleError(error)); // handle any errors that occur
+});
+
+// Form Submit Success handler
+function handleSuccess(result) {
+    const messageDiv = document.getElementById('submitResponse');
+    messageDiv.textContent = `Thanks! Your post has been submitted!`; // Adjust the message based on the result
+    messageDiv.style.color = "green";
+    // Reset the form after success
+    document.getElementById('chatPostForm').reset(); // Make sure this references the correct form ID
 }
+
+// Form Submit Error handler
+function handleError(error) {
+    console.error("Error:", error); // for debugging
+    const messageDiv = document.getElementById('submitResponse');
+    messageDiv.textContent = "There was a problem. Please try again.";
+    messageDiv.style.color = "red";
+}
+
 
 function fetchEvents(studentNumber, zoneld, displayEvents, handleGETError) {
 
@@ -104,5 +118,3 @@ function fetchEvents(studentNumber, zoneld, displayEvents, handleGETError) {
         });
 }}
 
-// Export headers so that other files can use it
-export {logPageLoadMessage, submitEventForm, studentNumber, uqcloudZoneId, fetchEvents, myHeaders};

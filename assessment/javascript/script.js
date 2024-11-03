@@ -1,17 +1,9 @@
-//Import functionality from other modules
-//Define variables
-//Attach event listeners to elements
-//Startup code that runs at or during page load
+// Import the logPageLoadMessage function from components.js
+import { logPageLoadMessage } from "./components.js";
+
+// Call the function to log the message
+logPageLoadMessage();
+
+// Startup code that runs at or during page load
 alert("JavaScript works!");
-console. log ("script loaded");
-//Functions to define specific behaviours
-//Functions for general use
-
-
-
-import { load } from "./components.js";
-
-
-
-load();
-
+console.log("script loaded");
