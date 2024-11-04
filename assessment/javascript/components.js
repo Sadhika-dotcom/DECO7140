@@ -1,9 +1,7 @@
-export function logPageLoadMessage() {
-    console.log("JavaScript is being loaded!");
-} 
-
-// Ensure this function runs after the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', logPageLoadMessage);
+document.addEventListener('DOMContentLoaded', function() {
+    logPageLoadMessage();
+    fetchChatPosts();
+});
 
 document.getElementById('chatPostForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission behaviour
@@ -102,15 +100,15 @@ function fetchChatPosts(){
                 `;
             });
 
-            document.getElementById("chat-list").innerHTML = output;
+            const chatList = document.getElementById("chat-list");
+            if (chatList) {
+                chatList.innerHTML = output;
+            } else {
+                console.error("Element with ID 'chat-list' not found.");
+            }
         })
         .catch(error => {
             console.error("Error:", error); 
             // Display a user-friendly message or handle the error as needed
         });
 }
-
-document.addEventListener('DOMContentLoaded', fetchChatPosts);
-
-
-
