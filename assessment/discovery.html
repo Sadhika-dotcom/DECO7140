@@ -3,19 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gamer Profile Page</title>
+        <title>Discovery</title>
    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/base.css">
         <link rel="stylesheet" href="css/layout.css">
         <link rel="stylesheet" href="css/components.css">
         <link rel="stylesheet" href="css/css_reset.css">
         <script type="module" src="javascript/script.js" defer></script>
-  </head>
+    </head>
     <body>
         <section class="hero">
             <div class="main-width">
@@ -34,3 +34,74 @@
                         </ul>
                     </nav>
                 </header>
+
+                <!-- Container to hold sidebar and game grid side by side -->
+                <div class="content-wrapper">
+                    <div class="sidebar">
+                        <h3>Genres</h3>
+                        <div class="genre" onclick="filterGames('all')">All</div>
+                        <div class="genre" onclick="filterGames('action')">Action</div>
+                        <div class="genre" onclick="filterGames('fantasy')">Fantasy</div>
+                        <div class="genre" onclick="filterGames('horror')">Horror</div>
+                        <div class="genre" onclick="filterGames('puzzle')">Puzzle</div>
+                        <div class="genre" onclick="filterGames('kids')">Kids</div>
+                    </div>
+
+                    <section class="game-grid" id="gameGrid">
+                        <div class="game-item" data-genre="action">
+                            <img src="images/game6.jpg" class="game-image" alt="Game Title">
+                            <div class="game-title">Game Title 1</div>
+                        </div>
+                        <div class="game-item" data-genre="fantasy">
+                            <img src="images/game8.jpg" class="game-image" alt="Game Title">
+                            <div class="game-title">Game Title 2</div>
+                        </div>
+                        <div class="game-item" data-genre="horror">
+                            <img src="images/game1.jpg" class="game-image" alt="Game Title">
+                            <div class="game-title">Game Title 3</div>
+                        </div>
+                        <div class="game-item" data-genre="puzzle">
+                            <img src="images/game3.jpg" class="game-image" alt="Game Title">
+                            <div class="game-title">Game Title 4</div>
+                        </div>
+                        <div class="game-item" data-genre="kids">
+                            <img src="images/game10.jpg" class="game-image" alt="Game Title">
+                            <div class="game-title">Game Title 5</div>
+                        </div>
+                        <div class="game-item" data-genre="action"><img src="images/game1.jpg" alt="Game 1"></div>
+                        <div class="game-item"><img src="images/game2.png" alt="Game 2"></div>
+                        <div class="game-item"><img src="images/game3.jpg" alt="Game 3"></div>
+                        <div class="game-item"><img src="images/game4.png" alt="Game 4"></div>
+                        <div class="game-item" data-genre="fantasy"><img src="images/game5.jpg" alt="Game 5"></div>
+                        <div class="game-item" data-genre="action"><img src="images/game6.jpg" alt="Game 6"></div>
+                        <div class="game-item" data-genre="fantasy"><img src="images/hollowknight.jpg" alt="Game 7"></div>
+                        <div class="game-item" data-genre="horror"><img src="images/game8.jpg" alt="Game 8"></div>
+                        <div class="game-item" data-genre="fantasy"><img src="images/game9.png" alt="Game 9"></div>
+                        <div class="game-item"><img src="images/game10.jpg" alt="Game 10"></div>
+                        <div class="game-item" data-genre="puzzle"><img src="images/Limbo.jpg" alt="Game 11"></div>
+                        <div class="game-item" data-genre="kids"><img src="images/stardewvalley.jpg" alt="Game 12"></div>
+                        <div class="game-item" data-genre="fantasy"><img src="images/ufo50.png" alt="Game 13"></div>
+                        <div class="game-item" data-genre="action"><img src="images/hades.jpg" alt="Game 14"></div>
+                        <div class="game-item" data-genre="horror"><img src="images/game15.jpg" alt="Game 15"></div>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <script>
+            function filterGames(genre) {
+                const gameCards = document.querySelectorAll('.game-item'); // Select all game cards
+
+                gameCards.forEach((card) => {
+                    const cardGenre = card.getAttribute('data-genre'); // Get the genre of each game card
+
+                    // Show all games if 'all' is selected or match specific genre
+                    if (genre === 'all' || cardGenre === genre) {
+                        card.style.display = 'block'; // Display the matching game cards
+                    } else {
+                        card.style.display = 'none'; // Hide non-matching game cards
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

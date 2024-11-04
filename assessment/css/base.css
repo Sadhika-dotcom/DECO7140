@@ -455,3 +455,62 @@ h2 {
 }
 
 
+/*discover*/
+/* Content wrapper to align sidebar and game grid side-by-side */
+.content-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 200px;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+  color: #ffffff;
+}
+
+.sidebar h3 {
+  text-align: center;
+}
+
+.genre {
+  padding: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.genre:hover {
+  background-color: #333; /* Darker background */
+  color: #00FFCC; /* Accent color for readability */
+}
+
+/* Game grid styling */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+  grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
+  gap: 20px; /* Space between grid items */
+  flex-grow: 1;
+}
+
+/* Individual game item */
+.game-item {
+  position: relative;
+  width: 100%; /* Fill grid cell width */
+  padding-top: 100%; /* Makes each item square */
+  overflow: hidden;
+  border-radius: 8px; /* Optional for rounded corners */
+}
+
+/* Image styling */
+.game-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover entire square without distortion */
+  border-radius: 8px; /* Optional: matches container */
+}
